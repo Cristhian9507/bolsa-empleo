@@ -33,6 +33,7 @@ APP_URL=http://localhost
 LOG_CHANNEL=stack
 
 # Datos para docker
+```
 DB_CONNECTION=pgsql
 DB_HOST=psqlbolsaempleo
 DB_PORT=5432
@@ -73,3 +74,4 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 JWT_SECRET=cjg1iHrfPe1Pimgveu5ZCHjfoTPHrjWeK7asbNaPumPAyqMCvikq8ZuCxCnhF3ak
+```
