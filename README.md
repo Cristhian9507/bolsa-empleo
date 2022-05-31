@@ -22,7 +22,7 @@ El aplicativo queda expuesto en el 80 y la base de datos externamente escucha en
 - http://localhost/api/users/index (GET)
 - http://localhost/api/users/oferta-laboral/registro (POST)
 
-## Ejemplos de archivo .env
+## Ejemplo de archivo .env
 ```
 APP_NAME=Laravel
 APP_ENV=local
