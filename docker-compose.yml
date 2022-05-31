@@ -1,0 +1,57 @@
+version: "3.2"
+
+services:
+  bolsaempleo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bolsaempleo
+    ports:
+      - 80:80
+    environment:
+      DB_HOST: "db"
+    depends_on:
+      - db
+    networks:
+      - app-network
+    # command: ["/bin/echo", "-c"]
+    # args: ["run.sh"]
+  db:
+    image: postgres:13.5
+    container_name: psqlbolsaempleo
+    hostname: psqlbolsaempleo
+    environment:
+      POSTGRES_DB:       ${DB_DATABASE}
+      POSTGRES_USER:     ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5536:5432"
+    restart: always
+    networks:
+      - app-network
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+  
+  # imagen encargada de realizar los backups de seguridad
+  # pg_backup_s3:
+  #   image: eeshugerman/postgres-backup-s3:13
+  #   environment:
+  #     SCHEDULE: '@every 6h00m00s'     # optional
+  #     BACKUP_KEEP_DAYS: 1     # optional
+  #     PASSPHRASE: ${PASSPHRASE}  # optional
+  #     S3_REGION: ${S3_REGION}
+  #     S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
+  #     S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
+  #     S3_BUCKET: ${S3_BUCKET}
+  #     S3_PREFIX: ${S3_PREFIX}
+  #     POSTGRES_HOST: ${POSTGRES_HOST}
+  #     POSTGRES_DATABASE: ${POSTGRES_DB}
+  #     POSTGRES_USER: ${POSTGRES_USR}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PWD}
+  #   # volumes:
+  #   #   - /your/awesome/data:/data:ro #use ro to make sure the volume gets mounted read-only
+  #   restart: always
+
