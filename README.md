@@ -23,7 +23,7 @@ El aplicativo queda expuesto en el 80 y la base de datos externamente escucha en
 - http://localhost/api/users/oferta-laboral/registro (POST)
 
 ## Ejemplos de archivo .env
-
+```
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:1o5L1dEuAg4ltGKZEIx9twuFr0BjWrvJSkgpMtVbkt8=
@@ -33,7 +33,7 @@ APP_URL=http://localhost
 LOG_CHANNEL=stack
 
 # Datos para docker
-```
+
 DB_CONNECTION=pgsql
 DB_HOST=psqlbolsaempleo
 DB_PORT=5432
