@@ -3,6 +3,7 @@ Prueba técnica back
 ## Tecnologías
 
 - Laravel v8.12 (php),
+- Base de datos Postgresql 13.5
 
 ## Pre-Requisitos
 - docker
